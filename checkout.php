@@ -35,7 +35,7 @@
         );
 
         $preference->auto_return = "approved";
-        $preference->notification_url = $actual_link . "/notifications";
+        $preference->notification_url = "https://keoticket.com/wp-json/KubeyRestApi/v1/Temp/MercadoPagoCertifNotification/";
     }
 
     $preference->payment_methods = array(
