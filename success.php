@@ -155,6 +155,7 @@ crossorigin="anonymous"></script>
                             <P><b>collection_status:</b> <?php echo $collection_status ?><br></P>
                             <P><b>external_reference:</b> <?php echo $external_reference ?><br></P>
                             <P><b>payment_type:</b> <?php echo $payment_type ?><br></P>
+                            <P><b>merchant_order_id:</b> <?php echo $merchant_order_id ?><br></P>
                             <P><b>preference_id:</b> <?php echo $preference_id ?><br></P>
                             <P><b>site_id:</b> <?php echo $site_id ?><br></P>
                             <P><b>processing_mode:</b> <?php echo $processing_mode ?><br></P>

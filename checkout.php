@@ -24,6 +24,8 @@
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
     $actual_link =  $protocol . $_SERVER['HTTP_HOST'];
 
+    echo 'Protocol' . $protocol;
+
     if ($_SERVER['HTTP_HOST'] != "127.0.0.16") 
     {
         $preference->back_urls = array(
