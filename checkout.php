@@ -19,6 +19,7 @@
 
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
+    $preference->external_reference = "lucas@kubeymachine.com";
 
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
     $actual_link =  $protocol . $_SERVER['HTTP_HOST'];
@@ -26,9 +27,9 @@
     if ($_SERVER['HTTP_HOST'] != "127.0.0.16") 
     {
         $preference->back_urls = array(
-            "success" => $actual_link . "/success",
-            "failure" => $actual_link . "/failure",
-            "pending" => $actual_link . "/pending"
+            "success" => $actual_link . "/success.php",
+            "failure" => $actual_link . "/failure.php",
+            "pending" => $actual_link . "/pending.php"
         );
 
         $preference->auto_return = "approved";
@@ -55,7 +56,6 @@
     $item->quantity = 1;
     $item->currency_id = "ARS";
     $item->unit_price = $_POST['price'];
-    $item->external_reference = "lucas@kubeymachine.com";
     $preference->items = array($item);
 
     // Payer

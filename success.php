@@ -26,6 +26,13 @@ if (isset($_GET['payment_type']))
     $payment_type = $_GET['payment_type'];
 }
 
+$merchant_order_id = '';
+if (isset($_GET['merchant_order_id'])) 
+{
+    $payment_type = $_GET['merchant_order_id'];
+}
+
+
 $preference_id = "rty";
 if (isset($_GET['preference_id'])) 
 {
