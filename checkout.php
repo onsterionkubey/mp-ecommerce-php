@@ -22,9 +22,9 @@
     $preference->external_reference = "lucas@kubeymachine.com";
 
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
-    $actual_link =  $protocol . $_SERVER['HTTP_HOST'];
+    $actual_link =  "https://" . $_SERVER['HTTP_HOST'];
 
-    echo 'Protocol' . $protocol;
+    //echo 'Protocol' . $protocol;
 
     if ($_SERVER['HTTP_HOST'] != "127.0.0.16") 
     {
@@ -35,7 +35,7 @@
         );
 
         $preference->auto_return = "approved";
-        $preference->notification_url = $actual_link . "/api/notifications/";
+        $preference->notification_url = $actual_link . "/api/notifications";
     }
 
     $preference->payment_methods = array(
