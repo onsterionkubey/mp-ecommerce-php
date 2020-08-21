@@ -35,7 +35,7 @@
         );
 
         $preference->auto_return = "approved";
-        $preference->notification_url = $actual_link . "/api/notifications";
+        $preference->notification_url = $actual_link . "/api.php/notifications";
     }
 
     $preference->payment_methods = array(
