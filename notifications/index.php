@@ -8,10 +8,18 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uriExplode = explode( '/', $uri );
-$api_url = 'https://onsterion-mp-commerce-php.herokuapp.com/notifications';
+$opts = array(
+    "ssl"=>array(
+        "verify_peer"=>false,
+        "verify_peer_name"=>false,
+    ),
+);  
+//Basically adding headers to the request
+$context = stream_context_create($opts);
+$api_url = urlencode('https://onsterion-mp-commerce-php.herokuapp.com/notifications');
 //$api_url = 'php://input';
 
-$jsonContent = json_decode(file_get_contents($api_url), TRUE);
+$jsonContent = json_decode(file_get_contents($api_url,false,$context), TRUE);
 
 // all of our endpoints start with /person
 // everything else results in a 404 Not Found
